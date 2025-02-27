@@ -1,17 +1,17 @@
 {
-  "name": "twitter-clone",
+  "name": "vireo",
   "module": "src/server.ts",
   "type": "module",
   "version": "2.0.0",
   "scripts": {
     "dev": "bun --watch src/server.ts",
     "start": "bun src/server.ts",
+    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "db:generate": "bunx drizzle-kit generate",
     "db:migrate": "bun src/database/migrate.ts",
     "db:studio": "bunx drizzle-kit studio",
     "db:seed": "bun src/database/seed.ts",
-    "eslint": "bunx eslint .",
-    "vercel-build": "echo hello vercel"
+    "eslint": "bunx eslint ."
   },
   "devDependencies": {
     "@faker-js/faker": "^8.4.1",
@@ -24,8 +24,8 @@
     "@types/jsonwebtoken": "^9.0.6",
     "@types/nodemailer": "^6.4.15",
     "drizzle-kit": "^0.22.7",
-    "eslint": "9.x",
     "globals": "^15.5.0",
+    "prettier": "^3.5.2",
     "typescript-eslint": "^7.13.0"
   },
   "peerDependencies": {

@@ -1,5 +1,5 @@
-import './configs/cloudinary.config';
-import { app } from './app';
+import "./configs/cloudinary.config";
+import { app } from "./app";
 
 const PORT = process.env.PORT || 2338;
 
