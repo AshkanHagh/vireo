@@ -1,0 +1,917 @@
+{
+	"info": {
+		"_postman_id": "f9bac9ad-de2f-4c4a-ba5f-7fb4d524db75",
+		"name": "Twitter",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33000042"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\" : \"Ashkan\",\r\n    \"email\" : \"ashkanHagh01@gmail.com\",\r\n    \"password\" : \"ashkan1386129\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:7319/api/v2/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7319",
+							"path": [
+								"api",
+								"v2",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "verify",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"activationCode\" : \"4041\",\r\n    \"activationToken\" : \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoiYXNoa2FuIiwiZW1haWwiOiJhc2hrYW5oYWdoMDFAZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmIkMTAkL3RHcDJyUWV5Y3NBZnBnUzIudXVLLjIxRkZPUThTLlcydnJkSS84V1hOWHBYZ1RNNW15UmkifSwiYWN0aXZhdGlvbkNvZGUiOiI4OTczIiwiaWF0IjoxNzIxNjMwNjUxLCJleHAiOjE3MjE2MzA5NTF9.4nAOzXU1YD3LXsPTMamePcw36OgdrKb3LeYhhVpcyXs\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:7319/api/v2/auth/verify",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7319",
+							"path": [
+								"api",
+								"v2",
+								"auth",
+								"verify"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"ashkanhaghdoost01@gmail.com\",\r\n    // \"username\" : \"Ashkan\",\r\n    \"password\" : \"ashkan1386129\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:7319/api/v2/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7319",
+							"path": [
+								"api",
+								"v2",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "refresh",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:7319/api/v2/auth/refresh",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7319",
+							"path": [
+								"api",
+								"v2",
+								"auth",
+								"refresh"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "update_profile",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fullName\" : \"Ashkan Haghdoost\",\r\n    \"bio\" : \"software developer\",\r\n    \"profilePic\" : \"https://avatar.iran.liara.run/public/29\",\r\n    \"gender\" : \"male\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:7319/api/v2/users/me",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7319",
+							"path": [
+								"api",
+								"v2",
+								"users",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:7319/api/v2/users/profile/ashkan",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7319",
+							"path": [
+								"api",
+								"v2",
+								"users",
+								"profile",
+								"ashkan"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "follow_unfollow",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:7319/api/v2/users/follow/47c534cd-b56e-46e1-9467-9d286ae07e56",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7319",
+							"path": [
+								"api",
+								"v2",
+								"users",
+								"follow",
+								"47c534cd-b56e-46e1-9467-9d286ae07e56"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjNlNDkyZGJmLWI3ZmEtNDJlYS05YzZkLTU5OGZjYWM5NDUwMCIsImlhdCI6MTcyMDcwNjYzMCwiZXhwIjoxNzIwNzEwMjMwfQ.fcdBdALVyQ7uebb2CK4TAkI9tPPd8aXGn8eGL01N-NA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:7319/api/v2/users/me",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7319",
+							"path": [
+								"api",
+								"v2",
+								"users",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "suggestions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:7319/api/v2/users/follow/suggestions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7319",
+							"path": [
+								"api",
+								"v2",
+								"users",
+								"follow",
+								"suggestions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "followings",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:7319/api/v2/users/followings",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7319",
+							"path": [
+								"api",
+								"v2",
+								"users",
+								"followings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "followers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:7319/api/v2/users/followers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7319",
+							"path": [
+								"api",
+								"v2",
+								"users",
+								"followers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update_account",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\" : \"Haghdoost\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:7319/api/v2/users/account",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7319",
+							"path": [
+								"api",
+								"v2",
+								"users",
+								"account"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update_password",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"oldPassword\" : \"123456789\",\r\n    \"newPassword\" : \"123456789\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:7319/api/v2/users/password",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7319",
+							"path": [
+								"api",
+								"v2",
+								"users",
+								"password"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "notifications",
+			"item": [
+				{
+					"name": "notifications",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:7319/api/v2/users/notifications",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7319",
+							"path": [
+								"api",
+								"v2",
+								"users",
+								"notifications"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "notifications",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:7319/api/v2/users/notifications",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7319",
+							"path": [
+								"api",
+								"v2",
+								"users",
+								"notifications"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "post",
+			"item": [
+				{
+					"name": "comments",
+					"item": [
+						{
+							"name": "replies",
+							"item": [
+								{
+									"name": "replay",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"text\" : \"me to bro i loved too!!!!!\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:7319/api/v2/post/comment/replay/49489970-5460-4acf-9732-a14901e373e9",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "7319",
+											"path": [
+												"api",
+												"v2",
+												"post",
+												"comment",
+												"replay",
+												"49489970-5460-4acf-9732-a14901e373e9"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "replay",
+									"request": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"text\" : \"Bro i love that\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:7319/api/v2/post/comment/replay/49489970-5460-4acf-9732-a14901e373e9/d56a6646-84fd-438a-b48a-dfe24c2b9588",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "7319",
+											"path": [
+												"api",
+												"v2",
+												"post",
+												"comment",
+												"replay",
+												"49489970-5460-4acf-9732-a14901e373e9",
+												"d56a6646-84fd-438a-b48a-dfe24c2b9588"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "replay",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:7319/api/v2/post/comment/replay/49489970-5460-4acf-9732-a14901e373e9/d56a6646-84fd-438a-b48a-dfe24c2b9588",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "7319",
+											"path": [
+												"api",
+												"v2",
+												"post",
+												"comment",
+												"replay",
+												"49489970-5460-4acf-9732-a14901e373e9",
+												"d56a6646-84fd-438a-b48a-dfe24c2b9588"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "replay",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:7319/api/v2/post/comment/replay/49489970-5460-4acf-9732-a14901e373e9?startIndex=0&limit=10",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "7319",
+											"path": [
+												"api",
+												"v2",
+												"post",
+												"comment",
+												"replay",
+												"49489970-5460-4acf-9732-a14901e373e9"
+											],
+											"query": [
+												{
+													"key": "startIndex",
+													"value": "0"
+												},
+												{
+													"key": "limit",
+													"value": "10"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "comment",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"text\" : \"Bro is good\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:7319/api/v2/post/comment/6311f2f5-a487-4994-a7fa-b4aeedc893dc",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "7319",
+									"path": [
+										"api",
+										"v2",
+										"post",
+										"comment",
+										"6311f2f5-a487-4994-a7fa-b4aeedc893dc"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "comment",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"text\" : \"Nice job i liked!!!!!\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:7319/api/v2/post/comment/9a40d6f3-3325-44ac-abb6-c3135556f2f6/d5d34c3d-eb74-45ea-94fa-f0fddfd21331",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "7319",
+									"path": [
+										"api",
+										"v2",
+										"post",
+										"comment",
+										"9a40d6f3-3325-44ac-abb6-c3135556f2f6",
+										"d5d34c3d-eb74-45ea-94fa-f0fddfd21331"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "comment",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:7319/api/v2/post/comment/608c29c8-e4a2-4893-9387-4ca7e8099447/21ce3cb5-8aaa-40cf-879e-c209288104e8",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "7319",
+									"path": [
+										"api",
+										"v2",
+										"post",
+										"comment",
+										"608c29c8-e4a2-4893-9387-4ca7e8099447",
+										"21ce3cb5-8aaa-40cf-879e-c209288104e8"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "comments",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:7319/api/v2/post/comment/6311f2f5-a487-4994-a7fa-b4aeedc893dc?limit=10&startIndex=0",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "7319",
+									"path": [
+										"api",
+										"v2",
+										"post",
+										"comment",
+										"6311f2f5-a487-4994-a7fa-b4aeedc893dc"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "10"
+										},
+										{
+											"key": "startIndex",
+											"value": "0"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "tags",
+					"item": [
+						{
+							"name": "add_tag",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"tags\" : [\"candy\", \"coffe\", \"pizza\"]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:7319/api/v2/posts/tags/01842612-48d5-4247-8c0a-c49567eb4806",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "7319",
+									"path": [
+										"api",
+										"v2",
+										"posts",
+										"tags",
+										"01842612-48d5-4247-8c0a-c49567eb4806"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "add_post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"text\" : \"i love javascript\",\r\n    \"image\" : \"https://avatars.githubusercontent.com/u/4689237\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:7319/api/v2/posts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7319",
+							"path": [
+								"api",
+								"v2",
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "posts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:7319/api/v2/posts/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7319",
+							"path": [
+								"api",
+								"v2",
+								"posts",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "like_post",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:7319/api/v2/post/like/db766a88-8449-46be-999b-ce0138a336cb",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7319",
+							"path": [
+								"api",
+								"v2",
+								"post",
+								"like",
+								"db766a88-8449-46be-999b-ce0138a336cb"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit_post",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"text\" : \"i use cookie in express\",\r\n    \"image\" : \"https://avatar.iran.liara.run/public/26\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:7319/api/v2/post/698ee0fe-21e0-440c-ba35-43b362147129",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7319",
+							"path": [
+								"api",
+								"v2",
+								"post",
+								"698ee0fe-21e0-440c-ba35-43b362147129"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete_post",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:7319/api/v2/post/2e6bae36-0ed2-4ca0-93cc-6b89878885c2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7319",
+							"path": [
+								"api",
+								"v2",
+								"post",
+								"2e6bae36-0ed2-4ca0-93cc-6b89878885c2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "save_post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:7319/api/v2/posts/save/0c5c16d8-96d0-4b29-9a99-6d1bb2712c2f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7319",
+							"path": [
+								"api",
+								"v2",
+								"posts",
+								"save",
+								"0c5c16d8-96d0-4b29-9a99-6d1bb2712c2f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "saved_posts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:7319/api/v2/posts/save",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7319",
+							"path": [
+								"api",
+								"v2",
+								"posts",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "following_posts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:7319/api/v2/posts/following",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7319",
+							"path": [
+								"api",
+								"v2",
+								"posts",
+								"following"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
