@@ -6,15 +6,15 @@ import express, {
 import cookieParser from "cookie-parser";
 import cors from "cors";
 import helmet from "helmet";
-
 import authRouter from "./routes/auth.route";
 import userRouter from "./routes/user.route";
 import postRouter from "./routes/post.route";
-
 import { RouteNowFoundError } from "./libs/utils";
 import { ErrorMiddleware } from "./middlewares/error";
+import { migration } from "./database/migrate";
 
 const app = express();
+await migration();
 
 app.use(express.json({ limit: "10mb" }));
 app.use(express.urlencoded({ extended: true }));

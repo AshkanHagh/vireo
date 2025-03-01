@@ -1,4 +1,19 @@
 services:
+  backend:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    env_file:
+      - ./.env
+    depends_on:
+      - redis
+      - postgres
+    deploy:
+      mode: replicated
+      replicas: 2
+    networks:
+      - private
+
   postgres:
     image: postgres:16.4-alpine
     restart: always
@@ -21,24 +36,16 @@ services:
     volumes:
       - redis_data:/var/lib/redis/data
 
-  bun-express-api:
-    build:
-      context: .
-      dockerfile: Dockerfile
+  nginx:
+    image: registry.docker.ir/nginx:stable-alpine3.20-perl
+    ports:
+      - 80:80
+    depends_on:
+      - backend
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
     networks:
       - private
-    env_file:
-      - ./.env
-    ports:
-      - "${PORT}:${PORT}"
-    restart: unless-stopped
-    depends_on:
-      postgres:
-        condition: service_healthy
-        restart: true
-      redis:
-        condition: service_healthy
-        restart: true
 
 volumes:
   postgres_data:
